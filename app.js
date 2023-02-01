@@ -1,5 +1,8 @@
 const { exec } = require("child_process");
 const knex = require("knex")(require("./knexfile"));
+const cron = require('node-cron');
+
+require('dotenv').config();
 
 const runSpeedTest = () => {
     return new Promise(resolve => {
@@ -33,9 +36,11 @@ const main = async () =>  {
             host: json.server.name
         });
 
-        process.exit(0);
+	return;
 
     }
 };
 
-main();
+cron.schedule(process.env.INTERVAL, async () => {
+  await main();
+});
