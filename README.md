@@ -12,7 +12,11 @@ This bridge is used to store speedtest results in a MySQL database.
 Download - Project-Files
 
 ```
-git clone https://github.com/qMalte/Speedtest
+git clone https://github.com/qMalte/SpeedtestBridge
+```
+
+```
+cd SpeedtestBridge
 ```
 
 Download - Dependencies
